@@ -1,2 +1,20 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+import requests
+from bs4 import BeautifulSoup
+
+
+html=requests.get("https://www.imdb.com/chart/top/").text
+soup=BeautifulSoup(html,"lxml")
+
+
+
+job=soup.find("td",class_="titleColumn")
+film_name=job.find("a").text
+point=soup.find("td",class_="ratingColumn imdbRating")
+film_rate=point.find("strong").text
+
+
+print(film_name,"       ",film_rate)
+
