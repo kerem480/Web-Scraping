@@ -1,3 +1,3 @@
 # Web-Scraping
 Web Scraping
-A simple data extraction project with BeautufilSoup
+A simple data extraction project with BeautifulSoup
